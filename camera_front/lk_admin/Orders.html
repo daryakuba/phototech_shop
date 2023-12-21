@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Подключение к googleFonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фототехника</title> <!--Название страницы-->
+     <!--привязывание фавиконки-->
+    <link rel="stylesheet" href="Orders.css">
+    <link rel="icon" href="..\favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+    <script src="Orders.js"></script>
+  </head>
+  <body>
+    <main>
+        <h1>Заказы</h1>
+        <!-- HTML-разметка для списка пользователей -->
+
+        <script> showOrders() </script>
+  
+        <ul id="orders-list"></ul>
+        <script id="orders" type="text/x-handlebars-template">
+            {{#each orders}}
+            <div class="info" style="display: flex; flex-direction: column;">
+              <div class="mini_info">
+             <p><b>Заказчик: </b> {{user.id}}</p>
+             <p><b>Статус:</b> {{status}}</p>
+             <p><b>Адрес и время: </b> {{address}}  </p>
+             <p><b>Продукты:</b></p>
+              {{#each products}}
+              <p><span>{{name}} - {{price}} <b>рублей</b></span></p>
+              {{/each}} 
+            </div>
+            <div class = "btn1" style="display: flex; justify-content: flex-end;">
+              <button class="button type1"  type="button" onclick="deleteOrder(this)" data-id="{{id}}">Удалить заказ</button>
+            
+              <a href="../lk_admin/ChangeStatusOfOrder.html?id={{id}}" class="no-underline">
+              <button class="button type1" id="btn2" >Изменить статус заказа</button>
+              </a>
+            </div>
+            </div>
+            
+            {{/each}}
+        </script>
+       
+            
+    </main>
+    <footer> <!--подвал сайта-->
+      <address>Кубанцева Дарья ИКБО-30-21</address>
+</body>

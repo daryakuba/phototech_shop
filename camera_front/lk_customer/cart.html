@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--Подключение к googleFonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фототехника</title> <!--Название страницы-->
+     <!--привязывание фавиконки-->
+    <link rel="stylesheet" href="cart.css">
+    <link rel="icon" href="..\favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+    <script src="cart.js"></script>
+  </head>
+  <body>
+    <main>
+        <h1>Корзина</h1>
+        <script> showCart() </script>
+
+        <ul id="products_in_cart-list"></ul>
+    <script id="products_in_cart" type="text/x-handlebars-template">
+            {{#each products_in_cart }}
+          <div class="miniblock">
+            <p>
+                {{name}}....................................................{{price}} рублей 
+            </p>
+            <button class="button type1" id="deleteProduct" onclick="deleteProduct('{{id}}')">удалить</button>
+          </div>
+            {{/each}}
+            <a href="../ordering/Address.html" class="no-underline">
+               <button class="button type1" id="btn1">Оформить заказ</button>
+            </a>
+        </script>
+              
+    </main>
+    <footer> <!--подвал сайта-->
+      <address>Кубанцева Дарья ИКБО-30-21</address>
+    </footer>
+    
+</body>

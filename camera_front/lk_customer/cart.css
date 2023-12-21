@@ -1,0 +1,112 @@
+
+  #btn1 {
+    width: 20%;
+    margin-bottom: 50px;
+  }
+  #btn2 {
+    width: 50%;
+    margin-bottom: 50px;
+  }
+  .no-underline {
+    text-decoration: none;
+    font-style: italic;
+  }
+
+  p{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: Georgia, Verdana, sans-serif;
+    font-size: 25px;
+
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  .miniblock{
+    border: 5px solid #566473;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    align-items: center;
+    
+}
+#deleteProduct{
+  width: 150px;
+  font-size: 20px;
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  margin-top: 25px;
+}
+h1 {
+  text-align: center;
+  color: rgb(57, 63, 80);
+  font-size: 45px;
+  font-family: 'Raleway';
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Raleway';
+  background-color: #ecf0f1;
+}
+
+
+/* Button component */
+.button {
+  position: relative;
+  padding: 1em 1.5em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  font-size: 18px;
+  margin: 1em 0.8em;
+}
+
+.button.type1 {
+  color: #566473;
+}
+
+.button.type1::after,
+.button.type1::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border: 2px solid;
+  transition: all 0.6s ease;
+  border-radius: 2px;
+}
+
+.button.type1::after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #566473;
+  border-right-color: #566473;
+}
+
+.button.type1::before {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #566473;
+  border-left-color: #566473;
+}
+
+.button.type1:hover::after,
+.button.type1:hover::before {
+  width: 100%;
+  height: 100%;
+}
